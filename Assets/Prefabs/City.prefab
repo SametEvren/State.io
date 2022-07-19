@@ -90,8 +90,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b61d94d7c5102489fef193e5036fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cityState: 2
   citizenText: {fileID: 5554627395740459058}
+  outerCity: {fileID: 1579048056059820359}
+  innerCity: {fileID: 382337238475114485}
 --- !u!1001 &2122107829725946627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -194,6 +195,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 917650215954549194, guid: d88a56463e55a2d47b89d42eee102a05, type: 3}
   m_PrefabInstance: {fileID: 2122107829725946627}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &382337238475114485 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1746667003664753910, guid: d88a56463e55a2d47b89d42eee102a05, type: 3}
+  m_PrefabInstance: {fileID: 2122107829725946627}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5554627395740459058 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5793104648946615089, guid: d88a56463e55a2d47b89d42eee102a05, type: 3}
