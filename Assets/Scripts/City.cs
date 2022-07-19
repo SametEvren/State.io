@@ -24,7 +24,6 @@ public class City : MonoBehaviour
         set
         {
             cityState = value;
-            print(value.ToString());
             ChangeCityColor(value.ToString());
         }
     }
@@ -46,6 +45,26 @@ public class City : MonoBehaviour
 
     public TextMeshProUGUI citizenText;
     public Image outerCity, innerCity;
+    private void OnValidate()
+    {
+        ColorManager CM = GetComponent<ColorManager>();
+        if (_CityState == CityState.BlueCity)
+        {
+            outerCity.color = CM.outsideBlue;
+            innerCity.color = CM.insideBlue;
+        }
+        if (_CityState == CityState.RedCity)
+        {
+            outerCity.color = CM.outsiteRed;
+            innerCity.color = CM.insideRed;
+        }
+        if (_CityState == CityState.BlankCity)
+        {
+            outerCity.color = CM.outsideBlank;
+            innerCity.color = CM.insideBlank;
+        }
+    }
+    
     private void Start()
     {
         StartCoroutine(IncreaseCitizen());
@@ -72,7 +91,7 @@ public class City : MonoBehaviour
 
     public void ChangeCityColor(string CityName)
     {
-        ColorManager CM = ColorManager.instance;
+        ColorManager CM = GetComponent<ColorManager>();
         if (CityName == "BlueCity")
         {
             outerCity.color = CM.outsideBlue;
@@ -89,4 +108,6 @@ public class City : MonoBehaviour
             innerCity.color = CM.insideBlank;
         }
     }
+
+    
 }
