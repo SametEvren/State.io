@@ -143,5 +143,8 @@ public class City : MonoBehaviour
         }
     }
 
-    
+    private void Update()
+    {
+        CitizenCount = Mathf.Clamp(CitizenCount, 0, 50);
+    }
 }
