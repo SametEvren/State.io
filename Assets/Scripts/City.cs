@@ -11,6 +11,11 @@ public class City : MonoBehaviour
     {
         BlueCity,RedCity,BlankCity
     }
+    public enum RaidState
+    {
+        Stable,Raiding,GetRaid
+    }
+    
 
     [SerializeField]
     private CityState cityState;
@@ -27,7 +32,24 @@ public class City : MonoBehaviour
             ChangeCityColor(value.ToString());
         }
     }
+    
+    [SerializeField]
+    private RaidState raidState;
 
+    public RaidState _RaidState
+    {
+        get
+        {
+            return raidState;
+        }
+        set
+        {
+            raidState = value;
+        }
+    }
+    
+    
+    [SerializeField]
     private int citizenCount;
 
     public int CitizenCount
@@ -81,11 +103,23 @@ public class City : MonoBehaviour
         yield return new WaitForSeconds(VM.gameFlowSpeed);
         if ((cityState == CityState.BlueCity || cityState == CityState.RedCity) &&
             CitizenCount == VM.maxCitizenCountTakenCity)
+        {
+            StartCoroutine(IncreaseCitizen());
             yield break;
-        if(cityState == CityState.BlankCity && CitizenCount == VM.maxCitizenCountBlankCity)
+        }
+
+        if (cityState == CityState.BlankCity && CitizenCount == VM.maxCitizenCountBlankCity)
+        {
+            StartCoroutine(IncreaseCitizen());
             yield break;
+        }
+
+        if (_RaidState != RaidState.Stable)
+        {
+            StartCoroutine(IncreaseCitizen());
+            yield break;
+        }
         CitizenCount += 1;
-        
         StartCoroutine(IncreaseCitizen());
     }
 

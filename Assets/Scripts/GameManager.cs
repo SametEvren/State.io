@@ -18,7 +18,9 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
     #endregion
-    
+
+    public bool citySelected;
+    public List<City> attackingCities = new List<City>();
     private void OnValidate()
     {
         UpdateCityName(_MyCity.ToString());
