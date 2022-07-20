@@ -125,7 +125,6 @@ public class CityInteraction : MonoBehaviour, IPointerEnterHandler, IPointerExit
                         {
                             GM.attackingCities[i]._RaidState = City.RaidState.Stable;
                             GM.attackingCities[i].GetComponent<CityInteraction>().isSelected = false;
-
                         }
 
                         GetComponent<City>()._RaidState = City.RaidState.Stable;
