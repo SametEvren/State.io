@@ -4,5 +4,18 @@ using UnityEngine;
 
 public class CityManager : MonoBehaviour
 {
-    public List<City> Cities = new List<City>();
+    #region Singleton
+    public static CityManager instance;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+    }
+    #endregion
+    public List<City> BlueCities, RedCities, BlankCities;
 }

@@ -21,4 +21,5 @@ public class VariableManager : MonoBehaviour
     public int gameFlowSpeed;
     public int maxCitizenCountTakenCity;
     public int maxCitizenCountBlankCity;
+    public int aiAttackFrequencyMin, aiAttackFrequencyMax;
 }
