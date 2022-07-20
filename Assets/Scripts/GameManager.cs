@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     public bool citySelected;
     public List<City> attackingCities = new List<City>();
+    public GameObject citizenPrefab;
+    public Canvas canvas;
     private void OnValidate()
     {
         UpdateCityName(_MyCity.ToString());
