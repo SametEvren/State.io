@@ -287,7 +287,6 @@ public class CityInteraction : MonoBehaviour, IPointerEnterHandler, IPointerExit
             {
                 attackedCity._RaidState = City.RaidState.Stable;
                 attackingCity._RaidState = City.RaidState.Stable;
-                GM.attackingCities.Clear();
                 StartCoroutine(CheckAI(Random.Range(VariableManager.instance.aiAttackFrequencyMin,VariableManager.instance.aiAttackFrequencyMax)));
             }).SetEase(Ease.Linear);
         }

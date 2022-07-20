@@ -95,6 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cityState: 0
+  raidState: 0
+  citizenCount: 0
   citizenText: {fileID: 5554627395740459058}
   outerCity: {fileID: 1579048056059820359}
   innerCity: {fileID: 382337238475114485}
@@ -185,7 +187,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEntered: 0
+  isSelected: 0
   arrow: {fileID: 2478001697522048889}
+  attackingCitizensCount: 0
 --- !u!1001 &2122107829725946627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -424,6 +428,10 @@ PrefabInstance:
     - target: {fileID: 5252359661020916342, guid: b5ebabf650762554baa17c2b603dfdb2, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6483806774120232705, guid: b5ebabf650762554baa17c2b603dfdb2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6483806774120232705, guid: b5ebabf650762554baa17c2b603dfdb2, type: 3}
       propertyPath: m_Materials.Array.data[0]
